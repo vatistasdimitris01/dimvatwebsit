@@ -83,6 +83,7 @@ const BannerCarousel: React.FC = () => {
                 slidesPerView={1}
                 pagination={{ clickable: true }}
                 loop={true}
+                grabCursor={true}
                 className="mySwiper"
                 style={{ paddingBottom: '40px' }} // Add padding for pagination
             >
