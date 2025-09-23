@@ -115,12 +115,12 @@ export const bannerCards: BannerCardData[] = [
         ctaLink: 'https://genglow.vercel.app/',
     },
     {
-        color: '#5e9bff',
-        optionalHeader: 'Smart Meal Generator',
-        title: 'MoodMenu',
-        body: 'A smart menu generator that creates meal recommendations based on mood and dietary preferences.',
-        cta: 'Try MoodMenu',
-        ctaLink: 'https://moodmenu.vercel.app/',
+        color: '#48f08b',
+        optionalHeader: 'Diagram Generation',
+        title: 'AI Digrm',
+        body: 'An AI diagram generator that converts text into structured, visual diagrams instantly.',
+        cta: 'Try AI Digrm',
+        ctaLink: 'https://ai-digrm.vercel.app/',
     },
     {
         color: '#ff8e59',
