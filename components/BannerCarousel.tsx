@@ -88,7 +88,7 @@ const BannerCarousel: React.FC = () => {
             >
                 {bannerCards.map((card, index) => (
                     <SwiperSlide key={index} className="h-auto">
-                        <div className="h-auto min-h-[700px] max-w-5xl mx-auto pb-4">
+                        <div className="h-auto min-h-[660px] max-w-4xl mx-auto pb-4">
                            <BannerCard card={card} />
                         </div>
                     </SwiperSlide>
