@@ -1,3 +1,4 @@
+
 import React, { useState, useEffect } from 'react';
 import HamburgerIcon from './icons/HamburgerIcon';
 import CloseIcon from './icons/CloseIcon';
@@ -73,7 +74,7 @@ const Header: React.FC = () => {
 
   return (
     <>
-      <header className={`fixed top-0 w-full z-20 transition-all duration-300 ${visible ? 'translate-y-0' : '-translate-y-full'} ${scrolled ? 'bg-white/80 backdrop-blur-lg shadow-sm' : 'bg-transparent'}`}>
+      <header className={`fixed top-0 w-full z-20 transition-all duration-300 ${visible ? 'translate-y-0' : '-translate-y-full'} bg-white/80 backdrop-blur-lg ${scrolled ? 'shadow-sm' : ''}`}>
         <nav className="mx-auto flex items-center justify-between px-4 lg:px-10 h-[76px] lg:h-[84px] max-w-screen-xl">
           {/* Left: Hamburger Menu Button */}
           <div className="flex-1 flex justify-start">

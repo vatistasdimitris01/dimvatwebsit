@@ -1,5 +1,5 @@
 
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Header from './components/Header';
 import Hero from './components/Hero';
 import CardList from './components/CardList';
@@ -7,9 +7,10 @@ import Footer from './components/Footer';
 import { portfolioData } from './constants';
 import BannerCarousel from './components/BannerCarousel';
 import Modal from './components/Modal';
+import LoadingScreen from './components/LoadingScreen';
 
 const AboutSection: React.FC = () => (
-    <section id="about" className="bg-white py-12 md:py-20 px-4 md:px-6 scroll-mt-20">
+    <section id="about" className="bg-white py-12 md:py-20 px-4 md:px-6 scroll-mt-24">
         <div className="max-w-4xl mx-auto text-center">
              <h2 className="text-3xl md:text-5xl lg:text-6xl font-normal">About Me</h2>
              <p className="font-sans-text text-lg md:text-xl mt-8 leading-relaxed">
@@ -83,6 +84,15 @@ const TermsContent: React.FC = () => (
 
 const App: React.FC = () => {
   const [modalContent, setModalContent] = useState<{ title: string; content: React.ReactNode } | null>(null);
+  const [isLoading, setIsLoading] = useState(true);
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setIsLoading(false);
+    }, 2000); 
+
+    return () => clearTimeout(timer);
+  }, []);
 
   const openModal = (type: 'privacy' | 'terms') => {
     if (type === 'privacy') {
@@ -98,14 +108,17 @@ const App: React.FC = () => {
 
   return (
     <div className="bg-white text-black font-sans">
-      <Header />
-      <main>
-        <Hero />
-        <AboutSection />
-        <BannerCarousel />
-        <CardList id="projects" title="Projects" projects={portfolioData.projects} />
-      </main>
-      <Footer onPrivacyClick={() => openModal('privacy')} onTermsClick={() => openModal('terms')} />
+      <LoadingScreen isLoading={isLoading} />
+      <div className={`transition-opacity duration-1000 ${isLoading ? 'opacity-0' : 'opacity-100'}`}>
+        <Header />
+        <main className="pt-[76px] lg:pt-[84px]">
+          <Hero />
+          <AboutSection />
+          <BannerCarousel />
+          <CardList id="projects" title="Projects" projects={portfolioData.projects} />
+        </main>
+        <Footer onPrivacyClick={() => openModal('privacy')} onTermsClick={() => openModal('terms')} />
+      </div>
       
       {modalContent && (
         <Modal 

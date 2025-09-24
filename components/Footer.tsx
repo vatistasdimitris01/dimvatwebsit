@@ -32,7 +32,7 @@ const Footer: React.FC<FooterProps> = ({ onPrivacyClick, onTermsClick }) => {
   const instaUrl = connect.socialLinks.find(link => link.platform === 'Instagram')?.url || '#';
 
   return (
-    <footer id="connect" className="bg-white text-black px-4 sm:px-6 lg:px-10 py-16 md:py-24 scroll-mt-20 overflow-hidden">
+    <footer id="connect" className="bg-white text-black px-4 sm:px-6 lg:px-10 py-16 md:py-24 scroll-mt-24 overflow-hidden">
       <div className="max-w-screen-2xl mx-auto">
         
         <div className="flex flex-col lg:flex-row lg:justify-between gap-16">

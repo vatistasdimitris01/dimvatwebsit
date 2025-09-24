@@ -1,3 +1,4 @@
+
 import React, { useState } from 'react';
 import { Project } from '../types';
 
@@ -36,7 +37,7 @@ const CardList: React.FC<CardListProps> = ({ id, title, projects }) => {
   const canShowMore = projects.length > initialProjectCount;
 
   return (
-    <section id={id} className="py-12 md:py-20 px-4 md:px-6 bg-white scroll-mt-20">
+    <section id={id} className="py-12 md:py-20 px-4 md:px-6 bg-white scroll-mt-24">
       <div className="text-center max-w-4xl mx-auto">
         <h2 className="text-3xl md:text-5xl lg:text-6xl font-normal">{title}</h2>
       </div>
